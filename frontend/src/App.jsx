@@ -6,11 +6,11 @@ import Navbar  from './Components/Navbar';
 import Footer from './Components/Footer';
 import './App.css';
 
-import Home from './pages/Home';
-import ProductPage from './pages/ProductPage';
-import AboutUs from './pages/AboutUs';
-import ContactUs from './pages/ContactUs';
-import AdminAddProduct from './pages/AdminAddProduct'; // Admin form to add products
+import Home from './Pages/Home';
+import ProductPage from './Pages/ProductPage';
+import AboutUs from './Pages/AboutUs';
+import ContactUs from './Pages/ContactUs';
+import AdminAddProduct from './Pages/AdminAddProduct'; // Admin form to add products
 import ProductDetails from './Pages/ProductDetails';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
