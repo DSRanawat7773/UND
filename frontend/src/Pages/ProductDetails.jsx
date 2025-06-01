@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../features/products/productSlice';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../Components/ProductCard';
 
 const ProductDetails = () => {
   const { id } = useParams();
