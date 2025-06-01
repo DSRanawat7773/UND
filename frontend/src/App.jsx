@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './app/store'; 
 
-import Navbar  from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar  from './Components/Navbar';
+import Footer from './Components/Footer';
 import './App.css';
 
 import Home from './pages/Home';
