@@ -35,7 +35,7 @@ const Featured = () => {
                 className="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
               >
                 <img
-                  src={product.image}
+                  src={product.images[0]}
                   alt={product.name}
                   className="w-full h-56 object-cover"
                 />
@@ -44,7 +44,9 @@ const Featured = () => {
                     {product.name}
                   </h3>
                   <p className="text-gray-600 text-md font-medium">{product.price}</p>
-                  <button className="mt-3 px-4 py-2 bg-[#C39A66] text-white text-sm font-medium rounded-md hover:bg-[#b18350] transition">
+                  <button
+                  onClick={() => navigate(`/product/${product._id}`)}
+                   className="mt-3 px-4 py-2 bg-[#C39A66] text-white text-sm font-medium rounded-md hover:bg-[#b18350] transition">
                     View Details
                   </button>
                 </div>

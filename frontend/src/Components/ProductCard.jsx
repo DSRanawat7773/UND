@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-md">
-      <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded" />
+      <img src={product.images[0]} alt={product.name} className="w-full h-40 object-cover rounded" />
       <h4 className="text-lg font-semibold mt-2">{product.name}</h4>
       <p className="text-sm text-gray-500">{product.category}</p>
       <p className="text-gray-700 font-bold">₹{product.price}</p>

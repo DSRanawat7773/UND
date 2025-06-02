@@ -25,7 +25,7 @@ const HeroProduct = () => {
 
           {/* CTA Button */}
           <button className="mt-6 px-6 py-3 bg-[#C39A66] text-white text-lg font-semibold rounded-md shadow hover:bg-[#b18350] transition">
-            Order Now
+            <a href="https://wa.me/919024576893?text=Hi%2C%20I'm%20interested%20for%20your%20HERO%20product!" target="_blank">ORDER NOW </a>
           </button>
         </div>
       </div>

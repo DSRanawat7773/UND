@@ -8,7 +8,15 @@ const {
 
 const router = express.Router();
 
-router.post("/", upload.single("image"), createProduct);
+router.post(
+  "/",
+  upload.fields([
+    { name: "images", maxCount: 5 },
+    { name: "video", maxCount: 1 },
+  ]),
+  createProduct
+);
+
 router.get("/", getProducts);
 router.get("/:id", getProductById);
 

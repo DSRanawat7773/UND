@@ -26,7 +26,7 @@ const Hero = () => {
           Transform your space with tailored designs, crafted just for you.
         </p>
         <button className="mt-4 bg-[#C39A66] text-black px-6 py-3 text-lg font-semibold rounded-full shadow-md hover:bg-[#b0834d] transition-all duration-300">
-          <a href="https://wa.me/919024576893?text=Hi%2C%20I'm%20interested%20for%20mural%20art!">SHOP NOW</a>
+          <a href="https://wa.me/919024576893?text=Hi%2C%20I'm%20interested%20for%20mural%20art!" target="_blank">SHOP NOW</a>
         </button>
       </div>
     </section>

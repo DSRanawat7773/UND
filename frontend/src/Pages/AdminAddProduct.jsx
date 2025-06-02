@@ -14,12 +14,12 @@ const AdminAddProduct = () => {
     description: "",
     material: "",
     lifeSpan: "",
-    image: null,
+    images: [],
   });
 
   const handleChange = (e) => {
-    if (e.target.name === "image") {
-      setFormData({ ...formData, image: e.target.files[0] });
+    if (e.target.name === "images") {
+      setFormData({ ...formData, images: Array.from(e.target.files) });
     } else {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
@@ -28,7 +28,14 @@ const AdminAddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fd = new FormData();
-    Object.entries(formData).forEach(([key, value]) => fd.append(key, value));
+    Object.entries(formData).forEach(([key, value]) => {
+      if (key === "images") {
+        value.forEach((file) => fd.append("images", file));
+      } else {
+        fd.append(key, value);
+      }
+    });
+
     dispatch(addProduct(fd));
     alert("Product added successfully!");
   };
@@ -37,16 +44,7 @@ const AdminAddProduct = () => {
     <div className="max-w-2xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-4">Add New Product</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {[
-          "name",
-          "size",
-          "thickness",
-          "category",
-          "price",
-          "description",
-          "material",
-          "lifeSpan",
-        ].map((field) => (
+        {["name", "size", "thickness", "category", "price", "description", "material", "lifeSpan"].map((field) => (
           <input
             key={field}
             type="text"
@@ -60,7 +58,9 @@ const AdminAddProduct = () => {
         ))}
         <input
           type="file"
-          name="image"
+          name="images"
+          multiple
+          accept="image/*"
           onChange={handleChange}
           required
           className="w-full p-2 border rounded"
