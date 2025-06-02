@@ -28,9 +28,9 @@ const Footer = () => {
         {/* Contact Information */}
         <div>
           <h3 className="text-xl font-medium">Contact Information</h3>
-          <p className="mt-3 text-gray-400">📍 Location: [Your Business Address]</p>
-          <p className="text-gray-400">📞 Phone: +91 XXXXXXXXXX</p>
-          <p className="text-gray-400">✉️ Email: info@urbannestdesigns.com</p>
+          <p className="mt-3 text-gray-400">📍 Location: Pune, Maharashtra</p>
+          <p className="text-gray-400">📞 Phone: +91 9024576893</p>
+          <p className="text-gray-400">✉️ Email: urbannestdesigns6@gmail.com</p>
         </div>
       </div>
 
@@ -38,13 +38,13 @@ const Footer = () => {
       <div className="mt-8 text-center">
         <h3 className="text-lg font-medium">Follow Us for More Inspiration</h3>
         <div className="flex justify-center space-x-6 mt-4">
-          <a href="#" className="text-gray-400 hover:text-teal-400 text-2xl">
+          <a href="https://www.instagram.com/urbannestdesigns.in/" className="text-gray-400 hover:text-teal-400 text-2xl">
             <FaInstagram />
           </a>
-          <a href="#" className="text-gray-400 hover:text-teal-400 text-2xl">
+          <a href="https://pin.it/1difHdN4P" className="text-gray-400 hover:text-teal-400 text-2xl">
             <FaPinterest />
           </a>
-          <a href="#" className="text-gray-400 hover:text-teal-400 text-2xl">
+          <a href="https://www.facebook.com/share/1Ab86gvHrM/" className="text-gray-400 hover:text-teal-400 text-2xl">
             <FaFacebook />
           </a>
         </div>
