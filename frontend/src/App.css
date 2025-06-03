@@ -1,15 +1,16 @@
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensures the page takes full viewport height */
-  text-align: center;
-  padding-top: 50px; /* Keeps space for the navbar */
-}
-
+/* Global styles */
 body {
   margin: 0;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 90px; /* Adjust based on your actual Navbar height */
+}
+
 main {
-  flex-grow: 1; /* Pushes the footer to the bottom */
+  flex-grow: 1;
 }

@@ -17,7 +17,7 @@ import Register from './Pages/Register';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store} className="mt-[96px] flex-grow">
       <Router>
         <Navbar />
         <Routes>

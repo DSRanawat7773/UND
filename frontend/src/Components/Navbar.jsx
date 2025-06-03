@@ -30,10 +30,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/30 backdrop-blur-lg shadow-lg z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white/30 backdrop-blur-lg shadow-lg z-50" role="navigation" aria-label="Main navigation">
       <HeaderCTA />
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-10 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center space-x-3">
+        <Link to="/" className="flex items-center space-x-3" title="Urban Nest Designs Home">
           <img
             src={logo}
             alt="Urban Nest Designs Logo"
@@ -50,7 +50,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link, index) => (
-            <li key={index} className="relative group">
+            <li key={index}>
               <Link
                 to={link.path}
                 className="text-gray-800 text-lg font-medium hover:text-[#C39A66] transition-colors duration-300"
@@ -62,16 +62,10 @@ const Navbar = () => {
           ))}
           {!isLoggedIn ? (
             <>
-              <Link
-                to="/login"
-                className="text-gray-800 font-medium hover:text-[#C39A66]"
-              >
+              <Link to="/login" className="text-gray-800 font-medium hover:text-[#C39A66]">
                 Login
               </Link>
-              <Link
-                to="/register"
-                className="bg-[#C39A66] text-white px-4 py-1.5 rounded-md hover:bg-[#b08655] transition"
-              >
+              <Link to="/register" className="bg-[#C39A66] text-white px-4 py-1.5 rounded-md hover:bg-[#b08655] transition">
                 Register
               </Link>
             </>
@@ -79,6 +73,7 @@ const Navbar = () => {
             <button
               onClick={handleLogout}
               className="bg-red-500 text-white px-4 py-1.5 rounded-md hover:bg-red-600"
+              aria-label="Logout"
             >
               Logout
             </button>
@@ -89,56 +84,70 @@ const Navbar = () => {
         <button
           className="md:hidden text-gray-900 p-2 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out md:hidden`}
-      >
-        <div className="p-5 flex flex-col items-end">
-          <button className="mb-4" onClick={() => setIsOpen(false)}>
-            <X size={28} className="text-gray-700" />
+ {/* Mobile Sidebar */}
+<div
+  className={`fixed top-0 right-0 inset-y-0 w-64 bg-white shadow-lg transform ${
+    isOpen ? "translate-x-0" : "translate-x-full"
+  } transition-transform duration-300 ease-in-out md:hidden z-50`}
+>
+  <div className="flex flex-col h-screen bg-white">
+    {/* Close Button */}
+    <div className="p-4 flex justify-end border-b">
+      <button onClick={() => setIsOpen(false)} aria-label="Close Menu">
+        <X size={28} className="text-gray-700" />
+      </button>
+    </div>
+
+    {/* Scrollable Nav List */}
+    <ul className="flex-1 overflow-y-auto px-6 py-4 space-y-6 bg-white">
+      {navLinks.map((link, index) => (
+        <li key={index}>
+          <Link
+            to={link.path}
+            className="text-gray-800 text-lg font-medium hover:text-[#C39A66]"
+            onClick={() => setIsOpen(false)}
+          >
+            {link.name}
+          </Link>
+        </li>
+      ))}
+      {!isLoggedIn ? (
+        <>
+          <li>
+            <Link to="/login" onClick={() => setIsOpen(false)}>
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link to="/register" onClick={() => setIsOpen(false)}>
+              Register
+            </Link>
+          </li>
+        </>
+      ) : (
+        <li>
+          <button
+            onClick={() => {
+              handleLogout();
+              setIsOpen(false);
+            }}
+            className="text-red-600 font-medium"
+          >
+            Logout
           </button>
-          <ul className="flex flex-col space-y-6 items-start">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <Link
-                  to={link.path}
-                  className="text-gray-800 text-lg font-medium hover:text-[#C39A66]"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-            {!isLoggedIn ? (
-              <>
-                <Link to="/login" onClick={() => setIsOpen(false)}>
-                  Login
-                </Link>
-                <Link to="/register" onClick={() => setIsOpen(false)}>
-                  Register
-                </Link>
-              </>
-            ) : (
-              <button
-                onClick={() => {
-                  handleLogout();
-                  setIsOpen(false);
-                }}
-                className="text-red-600 font-medium"
-              >
-                Logout
-              </button>
-            )}
-          </ul>
-        </div>
-      </div>
+        </li>
+      )}
+    </ul>
+  </div>
+</div>
+
+
     </nav>
   );
 };

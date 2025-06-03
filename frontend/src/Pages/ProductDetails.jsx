@@ -39,20 +39,22 @@ const ProductDetails = () => {
         {/* Image Gallery */}
         <div className="lg:w-1/2 w-full">
           {mainImage && (
-            <img
-              src={mainImage}
-              alt={product.name}
-              className="w-full h-[400px] object-cover rounded-2xl mb-4 transition-all duration-300"
-            />
+            <div className="bg-gray-100 p-2 rounded-2xl">
+              <img
+                src={mainImage}
+                alt={product.name}
+                className="w-full h-[400px] object-contain rounded-2xl mb-4 transition-all duration-300"
+              />
+            </div>
           )}
-          <div className="flex space-x-3 overflow-x-auto">
+          <div className="flex space-x-3 overflow-x-auto mt-2">
             {product.images?.map((img, idx) => (
               <img
                 key={idx}
                 src={img}
                 alt={`Thumb ${idx + 1}`}
                 onClick={() => setMainImage(img)}
-                className={`h-20 w-20 rounded-md object-cover cursor-pointer border-2 ${
+                className={`h-20 w-20 rounded-md object-contain bg-gray-100 cursor-pointer border-2 ${
                   mainImage === img ? 'border-black' : 'border-transparent'
                 }`}
               />
