@@ -8,7 +8,7 @@ const ProductPage = () => {
   const dispatch = useDispatch();
   const { items: products, loading } = useSelector((state) => state.products);
 
-  const itemsPerPage = 8;
+  const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(products.length / itemsPerPage);
   const lastIndex = currentPage * itemsPerPage;
@@ -20,31 +20,33 @@ const ProductPage = () => {
   }, [dispatch]);
 
   return (
-    <section className="bg-gray-100 py-10">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center">Our Products</h2>
+    <section className="bg-white py-10">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl font-semibold text-center mb-12">Our Collection</h2>
         {loading ? (
           <p className="text-center mt-10 text-gray-500">Loading...</p>
         ) : (
           <>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-16">
               {currentProducts.map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}
             </div>
-            <div className="flex justify-center items-center mt-8 space-x-3">
+            <div className="flex justify-center items-center mt-12 space-x-4">
               <button
                 onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className="p-2 bg-blue-500 rounded text-white"
+                className="p-2 bg-gray-800 text-white rounded disabled:opacity-50"
               >
                 <ChevronLeft />
               </button>
-              <span>{currentPage} / {totalPages}</span>
+              <span className="font-medium">
+                Page {currentPage} of {totalPages}
+              </span>
               <button
                 onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="p-2 bg-blue-500 rounded text-white"
+                className="p-2 bg-gray-800 text-white rounded disabled:opacity-50"
               >
                 <ChevronRight />
               </button>
