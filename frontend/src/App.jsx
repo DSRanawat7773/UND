@@ -14,11 +14,13 @@ import AdminAddProduct from './Pages/AdminAddProduct'; // Admin form to add prod
 import ProductDetails from './Pages/ProductDetails';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   return (
     <Provider store={store} className="mt-[96px] flex-grow">
       <Router>
+        <ScrollToTop/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
