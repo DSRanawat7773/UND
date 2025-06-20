@@ -4,12 +4,17 @@ const cloudinary = require("./cloudinary");
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: {
-    folder: "urban-nest-products",
-    allowed_formats: ["jpg", "jpeg", "png"],
+  params: async (req, file) => {
+    const isVideo = file.mimetype.startsWith("video/");
+    return {
+      folder: "urban-nest-products",
+      resource_type: isVideo ? "video" : "image", // ✅ tells Cloudinary what type of media
+      allowed_formats: isVideo
+        ? ["mp4", "mov", "webm"]
+        : ["jpg", "jpeg", "png"],
+    };
   },
 });
 
 const upload = multer({ storage });
-
 module.exports = upload;

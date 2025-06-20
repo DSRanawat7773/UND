@@ -11,5 +11,6 @@ export default defineConfig({
     Sitemap({
       hostname: 'https://urbannestdesigns.in', // your domain
     }),
+    // require('@tailwindcss/line-clamp'),
   ],
 })

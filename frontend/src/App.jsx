@@ -15,6 +15,10 @@ import ProductDetails from './Pages/ProductDetails';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ScrollToTop from './Components/ScrollToTop';
+import ProductCategoryPage from './Pages/ProductCategoryPage';
+import HomeDecorDetails from './Pages/HomeDecorDetails';
+import MuralProductDetails from './Pages/MuralProductDetails';
+
 
 function App() {
   return (
@@ -23,14 +27,17 @@ function App() {
         <ScrollToTop/>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/admin" element={<AdminAddProduct />} /> 
-          <Route path="/login" element={<Login/>} /> 
-          <Route path="/register" element={<Register/>} /> 
-          <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductPage />} />
+            <Route path="/products/:category" element={<ProductCategoryPage />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/admin" element={<AdminAddProduct />} /> 
+            <Route path="/login" element={<Login/>} /> 
+            <Route path="/register" element={<Register/>} /> 
+            <Route path="/homedecor/:id" element={<HomeDecorDetails />} />
+            <Route path="/mural/:id" element={<MuralProductDetails />} />
 
         </Routes>
         <Footer />

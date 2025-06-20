@@ -44,11 +44,11 @@ const Featured = () => {
                     {product.name}
                   </h3>
                   <p className="text-gray-600 text-md font-medium">{product.price}</p>
-                  <button
+                  {/* <button
                   onClick={() => navigate(`/product/${product._id}`)}
                    className="mt-3 px-4 py-2 bg-[#C39A66] text-white text-sm font-medium rounded-md hover:bg-[#b18350] transition">
                     View Details
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -58,7 +58,7 @@ const Featured = () => {
         {/* View All Button */}
         <div className="mt-8 text-center">
           <button
-            onClick={() => navigate("/product")}
+            onClick={() => navigate("/products/mural")}
             className="px-6 py-3 bg-[#C39A66] text-white text-lg font-semibold rounded-md shadow hover:bg-[#b18350] transition"
           >
             View All Products

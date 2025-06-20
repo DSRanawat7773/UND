@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
           <h2 className="text-2xl font-semibold">Urban Nest Designs</h2>
           <p className="mt-2 text-gray-400">
-            Elevating Spaces with Luxury 3D Wall Murals & Custom Water Fountains.
+            Elevating Spaces with Luxury 3D Wall Murals & Many More.
           </p>
         </div>
 
@@ -30,7 +30,7 @@ const Footer = () => {
           <h3 className="text-xl font-medium">Contact Information</h3>
           <p className="mt-3 text-gray-400">📍 Location: Pune, Maharashtra</p>
           <p className="text-gray-400">📞 Phone: +91 9024576893</p>
-          <p className="text-gray-400">✉️ Email: urbannestdesigns6@gmail.com</p>
+          <p className="text-gray-400">✉️ Email: admin@urbannestdesigns.in</p>
         </div>
       </div>
 

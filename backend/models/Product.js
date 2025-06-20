@@ -1,18 +1,28 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-  name: String,
+  type: {
+    type: String,
+    enum: ["home-decor", "mural"],
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  images: [String],         // Used for both mural & full products
+  description: String,
+
+  // Home Decor Specific Fields
   size: String,
   thickness: String,
-  images: [String],         // Array of image URLs
-  video: String,            // Single video URL
+  video: String,
   category: String,
   price: String,
   shippingCharge: {
     type: String,
     default: "free",
   },
-  description: String,
   material: String,
   lifeSpan: String,
 });
