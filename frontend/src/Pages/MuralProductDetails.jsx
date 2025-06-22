@@ -33,7 +33,7 @@ const MuralProductDetails = () => {
 
   const handleWhatsAppQuote = () => {
     const message = `Hi, I'm interested in this mural: ${product.name}`;
-    const phoneNumber = "919000000000";
+    const phoneNumber = "919024576893";
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
