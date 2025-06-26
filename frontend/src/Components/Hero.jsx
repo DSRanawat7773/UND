@@ -2,9 +2,9 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="w-full flex flex-col items-center justify-center py-10 md:py-16 ">
+    <section className="w-full h-full flex flex-col items-center justify-center py-10 px-0 md:py-7">
       {/* Video Container */}
-      <div className="w-full max-w-3xl h-[50vh] md:h-[60vh] overflow-hidden rounded-lg shadow-lg">
+      <div className="w-[150vh] h-full md:h-[80vh] overflow-hidden rounded-lg shadow-lg">
         <video
           className="w-full h-full object-cover rounded-lg"
           autoPlay
@@ -26,7 +26,9 @@ const Hero = () => {
           Transform your space with tailored designs, crafted just for you.
         </p>
         <button className="mt-4 bg-[#C39A66] text-black px-6 py-3 text-lg font-semibold rounded-full shadow-md hover:bg-[#b0834d] transition-all duration-300">
-          <a href="https://wa.me/919024576893?text=Hi%2C%20I'm%20interested%20for%20mural%20art!" target="_blank">SHOP NOW</a>
+          <a href="https://wa.me/919024576893?text=Hi%2C%20I'm%20interested%20for%20mural%20art!" target="_blank" rel="noopener noreferrer">
+            SHOP NOW
+          </a>
         </button>
       </div>
     </section>
