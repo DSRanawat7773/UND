@@ -20,6 +20,7 @@ import HomeDecorDetails from './Pages/HomeDecorDetails';
 import MuralProductDetails from './Pages/MuralProductDetails';
 
 
+
 function App() {
   return (
     <Provider store={store} className="mt-[96px] flex-grow">
