@@ -21,8 +21,9 @@ const ContactUs = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwW8j3DHfm-_R1IrpF_rcA9qTBA2m7SCI2MOTdbN0AYo9ppBSZsWNnjy8ytWQKxT2x4mQ/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwPG-3WaqWlTfpt4zCu2_E1b0X46ENpW0YrVtHTGg2Ox6OuJHpIYQlrZlsLiQ0DQ7WA/exec", {
         method: "POST",
+        mode: "no-cors", 
         body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json",
