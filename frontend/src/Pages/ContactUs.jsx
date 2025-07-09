@@ -23,7 +23,7 @@ const ContactUs = () => {
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbwPG-3WaqWlTfpt4zCu2_E1b0X46ENpW0YrVtHTGg2Ox6OuJHpIYQlrZlsLiQ0DQ7WA/exec", {
         method: "POST",
-        mode: "no-cors", 
+        // mode: "no-cors", 
         body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json",
