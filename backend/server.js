@@ -8,11 +8,12 @@ const app = express();
 
 // Allow only your frontend origin
 const corsOptions = {
-  origin: 'https://urbannestdesigns.in',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
+  credentials: true
 };
+
 
 app.use(cors(corsOptions));
 
