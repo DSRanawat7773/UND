@@ -7,10 +7,17 @@ dotenv.config();
 const app = express();
 
 // Allow only your frontend origin
-app.use(cors({
+const corsOptions = {
   origin: 'https://urbannestdesigns.in',
-  credentials: true
-}));
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+// Optional: Handle preflight requests manually if needed
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
