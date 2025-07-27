@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../features/products/productSlice';
 import ProductCard from '../Components/ProductCard';
+import { displayRazorpay } from "../Components/PaymentHandler";
+
 
 const HomeDecorDetails = () => {
   const { id } = useParams();
@@ -84,13 +86,11 @@ const HomeDecorDetails = () => {
               >
                 Add to Cart
               </button>
-              <a
-                href={whatsappURL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-all"
+               <a
+                onClick={displayRazorpay}
+                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-all cursor-pointer"
               >
-                Enquire via WhatsApp
+                Buy it now
               </a>
             </div>
 

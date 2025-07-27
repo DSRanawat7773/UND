@@ -54,9 +54,8 @@ const ProductDetails = () => {
                 src={img}
                 alt={`Thumb ${idx + 1}`}
                 onClick={() => setMainImage(img)}
-                className={`h-16 w-16 sm:h-20 sm:w-20 rounded-md object-contain cursor-pointer border-2 transition-all ${
-                  mainImage === img ? 'border-black scale-105' : 'border-transparent'
-                }`}
+                className={`h-16 w-16 sm:h-20 sm:w-20 rounded-md object-contain cursor-pointer border-2 transition-all ${mainImage === img ? 'border-black scale-105' : 'border-transparent'
+                  }`}
               />
             ))}
           </div>
@@ -85,10 +84,8 @@ const ProductDetails = () => {
                 Add to Cart
               </button>
               <a
-                href={whatsappURL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-all"
+                onClick={displayRazorpay}
+                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-all cursor-pointer"
               >
                 Buy it now
               </a>
