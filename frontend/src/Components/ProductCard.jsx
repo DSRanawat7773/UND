@@ -7,6 +7,9 @@ const ProductCard = ({ product }) => {
   const cleanPrice = product?.price?.toString().replace(/[^\d.]/g, "") || "0";
   const basePrice = parseFloat(cleanPrice);
   const calculatedOldPrice = Math.round(basePrice * 1.15);
+  console.log("Base Price:", basePrice);
+  console.log("Base Price:", cleanPrice);
+  console.log("Base Price:", calculatedOldPrice);
 
   // Determine thumbnails to show
   const thumbnailsToShow =

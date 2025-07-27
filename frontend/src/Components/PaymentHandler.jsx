@@ -1,7 +1,7 @@
 // src/utils/PaymentHandler.jsx
 import { loadScript } from "./loadScript";
 
-export async function displayRazorpay() {
+export async function displayRazorpay( amountInRupees,) {
   const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
 
   if (!res) {
@@ -11,10 +11,11 @@ export async function displayRazorpay() {
 
   // 👉 normally, you’d fetch an order from your backend here
   // const data = await fetch("http://localhost:5000/razorpay", { method: "POST" }).then(t => t.json());
-
+    const amountInPaise = amountInRupees * 100;
+    console.log("Amount in Paise:", amountInPaise);
   const options = {
     key: import.meta.env.VITE_RAZORPAY_KEY, // ✅ Replace with your Razorpay Key ID
-    amount: 50000, // in paise (50000 = ₹500)
+    amount: amountInPaise, // in paise (50000 = ₹500)
     currency: "INR",
     name: "Urban Design",
     description: "Test Transaction",

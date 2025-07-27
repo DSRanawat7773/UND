@@ -18,6 +18,11 @@ const HomeDecorDetails = () => {
   }, [dispatch]);
 
   const product = products.find((item) => item._id === id);
+      const cleanPrice = product?.price?.toString().replace(/[^\d.]/g, "") || "0";
+  const basePrice = parseFloat(cleanPrice);
+
+   console.log(basePrice);
+
 
   useEffect(() => {
     if (product?.images?.length > 0) {
@@ -85,9 +90,11 @@ const HomeDecorDetails = () => {
                 className="px-6 py-3 border border-black text-black rounded-xl hover:bg-black hover:text-white transition-all"
               >
                 Add to Cart
+               
               </button>
                <a
-                onClick={displayRazorpay}
+               onClick={() => displayRazorpay(parseFloat(basePrice))}
+
                 className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-all cursor-pointer"
               >
                 Buy it now
