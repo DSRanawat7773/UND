@@ -18,6 +18,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import ProductCategoryPage from './Pages/ProductCategoryPage';
 import HomeDecorDetails from './Pages/HomeDecorDetails';
 import MuralProductDetails from './Pages/MuralProductDetails';
+import AdminManageProducts from './Pages/AdminManageProducts';
 
 
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/register" element={<Register/>} /> 
             <Route path="/homedecor/:id" element={<HomeDecorDetails />} />
             <Route path="/mural/:id" element={<MuralProductDetails />} />
+            <Route path="/adminmanage" element={<AdminManageProducts/>} />
 
         </Routes>
         <Footer />

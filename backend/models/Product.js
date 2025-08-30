@@ -10,19 +10,25 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  images: [String],         // Used for both mural & full products
+  images: [String], // Used for both mural & home-decor products
   description: String,
+
+  // Common Price Field (if needed for both)
+  price: String, // Mainly for home-decor
 
   // Home Decor Specific Fields
   size: String,
   thickness: String,
   video: String,
   category: String,
-  price: String,
   shippingCharge: {
     type: String,
     default: "free",
   },
+
+  // Mural Specific Fields
+  muralPrice: String,
+
   material: String,
   lifeSpan: String,
 });
