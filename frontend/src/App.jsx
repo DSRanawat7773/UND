@@ -19,6 +19,7 @@ import ProductCategoryPage from './Pages/ProductCategoryPage';
 import HomeDecorDetails from './Pages/HomeDecorDetails';
 import MuralProductDetails from './Pages/MuralProductDetails';
 import AdminManageProducts from './Pages/AdminManageProducts';
+import WhyUs from './Components/WhyUs';
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/homedecor/:id" element={<HomeDecorDetails />} />
             <Route path="/mural/:id" element={<MuralProductDetails />} />
             <Route path="/adminmanage" element={<AdminManageProducts/>} />
+            <Route path="/WhyUs" element={<WhyUs/>} />
 
         </Routes>
         <Footer />

@@ -14,8 +14,9 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Catalogue", path: "/products" },
-    { name: "Services", path: "/services" },
+    // { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
+    { name: "Why Us?", path: "/WhyUs" },
   ];
 
   useEffect(() => {

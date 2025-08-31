@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LuxuryFAQ from "../Components/LuxuryFAQ"; // ✅ import your FAQ component
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -20,7 +21,7 @@ const MuralProductDetails = () => {
         setSelectedImage(res.data.images?.[0] || null);
 
         const relatedRes = await axios.get(`${API}/api/products/category/mural`);
-        const others = relatedRes.data.filter(p => p._id !== id);
+        const others = relatedRes.data.filter((p) => p._id !== id);
         setRelatedProducts(others.slice(0, 4));
       } catch (err) {
         console.error("Error fetching product:", err);
@@ -35,12 +36,22 @@ const MuralProductDetails = () => {
   const handleWhatsAppQuote = () => {
     const message = `Hi, I'm interested in this mural: ${product.name}`;
     const phoneNumber = "919024576893";
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
-
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
-  if (loading) return <div className="text-center py-16 text-lg font-medium">Loading...</div>;
-  if (!product) return <div className="text-center py-16 text-lg text-red-600">Product not found</div>;
+  if (loading)
+    return (
+      <div className="text-center py-16 text-lg font-medium">Loading...</div>
+    );
+  if (!product)
+    return (
+      <div className="text-center py-16 text-lg text-red-600">
+        Product not found
+      </div>
+    );
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
@@ -74,7 +85,11 @@ const MuralProductDetails = () => {
                 src={img}
                 alt={`${product.name} ${idx + 1}`}
                 className={`w-20 h-20 object-cover rounded-lg border cursor-pointer transition-transform duration-200 
-                  ${selectedImage === img ? "border-yellow-500 scale-105" : "border-gray-200"}`}
+                  ${
+                    selectedImage === img
+                      ? "border-yellow-500 scale-105"
+                      : "border-gray-200"
+                  }`}
                 onClick={() => setSelectedImage(img)}
               />
             ))}
@@ -91,7 +106,9 @@ const MuralProductDetails = () => {
 
         {/* Right: Product Info */}
         <div className="flex flex-col justify-start">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{product.name}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            {product.name}
+          </h1>
 
           {/* Price Badge */}
           {product.muralPrice && (
@@ -100,12 +117,28 @@ const MuralProductDetails = () => {
             </span>
           )}
 
-          <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">{product.description}</p>
+          <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+            {product.description}
+          </p>
 
           <div className="text-gray-600 space-y-2 text-sm md:text-base mb-6">
-            {product.size && <p><span className="font-semibold">Size:</span> {product.size}</p>}
-            {product.material && <p><span className="font-semibold">Material:</span> {product.material}</p>}
-            {product.lifeSpan && <p><span className="font-semibold">Life Span:</span> {product.lifeSpan}</p>}
+            {product.size && (
+              <p>
+                <span className="font-semibold">Size:</span> {product.size}
+              </p>
+            )}
+            {product.material && (
+              <p>
+                <span className="font-semibold">Material:</span>{" "}
+                {product.material}
+              </p>
+            )}
+            {product.lifeSpan && (
+              <p>
+                <span className="font-semibold">Life Span:</span>{" "}
+                {product.lifeSpan}
+              </p>
+            )}
           </div>
 
           <div className="flex flex-wrap gap-4 mt-4">
@@ -115,47 +148,32 @@ const MuralProductDetails = () => {
             >
               💬 Get a Quote on WhatsApp
             </button>
+
+            {/* Why Choose Us Button */}
+          <button
+            onClick={() => navigate("/whyUs")} // 👈 or open a modal if you prefer
+            className="bg-white border border-yellow-500 text-yellow-600 font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-yellow-50 transition duration-300 text-sm md:text-base"
+          >
+            ❤️ Why Choose Us? (See what makes us different)
+          </button>
+
           </div>
         </div>
       </div>
 
-      {/* Luxury Q&A Section */}
-      <div className="mt-16 border-t pt-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Why Choose UND Murals?</h2>
+      
 
-        <div className="space-y-6 text-gray-700">
-          <div>
-            <h3 className="text-lg md:text-xl font-semibold mb-2">1️⃣ Why is it more expensive than wallpaper?</h3>
-            <p>Our murals are not mass-produced like wallpaper. Each piece is handcrafted by India’s best skilled artists with over 30 years of experience. Wallpapers fade, peel, and need replacement every few years, while our murals are luxury art pieces with 100 years of shelf life and a 20-year warranty against cracks and damage.</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg md:text-xl font-semibold mb-2">2️⃣ What makes UND murals premium?</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Fine detailing work by 100+ in-house artisans.</li>
-              <li>Premium materials: fiber with composite mixtures for strength and finish.</li>
-              <li>3 state-of-the-art workshops in India ensuring consistent quality.</li>
-              <li>Not mass-produced – every mural is a custom luxury creation.</li>
-              <li>Safest delivery with guarantee – hard protective packaging.</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg md:text-xl font-semibold mb-2">3️⃣ Is it durable?</h3>
-            <p>Absolutely ✅ Our murals are built to last for generations with 100 years shelf life, 20 years warranty against cracks and damage, and made with fiber composite mixtures for strength, waterproofing, and resistance to wear. UND murals are an investment in timeless art.</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg md:text-xl font-semibold mb-2">4️⃣ Why choose UND over cheaper/local options?</h3>
-            <p>While cheaper alternatives may look attractive initially, they cannot match UND’s quality: 30+ years artistic expertise, premium materials, 100+ skilled in-house artists, safe delivery, and 20 years warranty. Choosing UND means owning a luxury statement piece that elevates your interiors, adds long-term value, and stands apart from mass-produced options.</p>
-          </div>
-        </div>
-      </div>
+  
+      {/* <div className="mt-16 border-t pt-12">
+        <LuxuryFAQ />
+      </div> */}
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
         <div className="mt-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Related Murals</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+            Related Murals
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {relatedProducts.map((item) => (
               <div
@@ -169,9 +187,13 @@ const MuralProductDetails = () => {
                   className="w-full aspect-square object-cover"
                 />
                 <div className="p-3 bg-white">
-                  <h3 className="text-gray-900 font-semibold text-base md:text-lg line-clamp-1">{item.name}</h3>
+                  <h3 className="text-gray-900 font-semibold text-base md:text-lg line-clamp-1">
+                    {item.name}
+                  </h3>
                   {item.muralPrice && (
-                    <p className="text-yellow-600 font-bold mt-1 text-sm md:text-base">₹{item.muralPrice}</p>
+                    <p className="text-yellow-600 font-bold mt-1 text-sm md:text-base">
+                      ₹{item.muralPrice}
+                    </p>
                   )}
                 </div>
               </div>
