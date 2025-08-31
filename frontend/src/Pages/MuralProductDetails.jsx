@@ -78,7 +78,7 @@ const MuralProductDetails = () => {
           )}
 
           {/* Thumbnails */}
-          <div className="flex gap-3 mt-3 overflow-x-auto">
+          <div className="flex flex-wrap gap-3 mt-3">
             {product.images?.map((img, idx) => (
               <img
                 key={idx}
