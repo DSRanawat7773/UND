@@ -4,69 +4,61 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "./ui/accordion"; // using shadcn/ui accordion for premium UI
+} from "./ui/accordion"; // ✅ shadcn/ui accordion
 
 const LuxuryFAQ = () => {
   const faqData = [
     {
       question:
-        "Why is it premium and unique/expensive compared to local market murals like MDF, HDHMR, fiberglass, POP, etc.?",
+        "Why are UND murals premium and different from local market murals?",
       answer: (
         <>
-          Most local murals made from MDF, HDHMR, fiberglass, or POP are{" "}
-          <strong>mass-produced, low-cost, and short-lived</strong>. They often crack,
-          fade, or lose finish in a few years.
+          Local MDF, HDHMR, fiberglass, or POP murals are{" "}
+          <strong>mass-produced, fragile, and short-lived</strong>.
           <br />
           <br />
-          <strong>UND murals are different because:</strong>
-          <ul className="list-disc pl-5 mt-2 space-y-1">
+          <strong>UND murals stand apart:</strong>
+          <ul className="list-disc pl-6 mt-3 space-y-2">
             <li>
-              <strong>India’s best fine detailing work</strong>, handcrafted by
-              artists with 30+ years of experience.
+              <strong>Finest detailing</strong>, handcrafted by artisans with 30+
+              years of mastery.
             </li>
             <li>
-              <strong>Premium composite fiber mixtures</strong> instead of MDF/POP →
-              stronger, lightweight, and long-lasting.
+              <strong>Premium composite fiber mixture</strong> – stronger and
+              more durable than POP/MDF.
             </li>
             <li>
-              <strong>100 years shelf life</strong> with a <strong>20-year warranty</strong>{" "}
-              against cracks and damage.
+              <strong>100 years shelf life</strong> with{" "}
+              <strong>20 years warranty</strong>.
             </li>
             <li>
-              <strong>Not mass produced</strong> – every mural is{" "}
-              <strong>custom luxury art</strong>, not factory cut-outs.
+              <strong>Exclusive luxury art</strong> – not factory cut-outs.
             </li>
             <li>
-              Finished in <strong>3 dedicated workshops</strong> across India with
-              quality control at every step.
+              <strong>Multiple workshops</strong> with strict quality control.
             </li>
           </ul>
-          <br />
-          This makes UND murals a{" "}
-          <strong>premium, luxury investment, far superior</strong> to standard market
-          alternatives.
         </>
       ),
     },
     {
       question: "What makes UND murals premium?",
       answer: (
-        <ul className="list-disc pl-5 space-y-1">
+        <ul className="list-disc pl-6 space-y-2">
           <li>
-            <strong>Finest craftsmanship</strong> – 100+ skilled artists in-house.
+            <strong>100+ artisans</strong> dedicated to craftsmanship.
           </li>
           <li>
-            <strong>Premium category materials</strong> with fiber composite mixtures.
+            <strong>Exclusive materials</strong> – fiber composites, not MDF/POP.
           </li>
           <li>
-            <strong>Exclusive production</strong> – not mass-produced.
+            <strong>Limited production</strong> – each piece is unique.
           </li>
           <li>
-            <strong>Safest delivery guarantee</strong> – hard protective packaging.
+            <strong>Luxury packaging & safest delivery</strong>.
           </li>
           <li>
-            <strong>Luxury positioning</strong> – designed as statement pieces, not
-            décor fillers.
+            Designed as <strong>statement art</strong>, not décor fillers.
           </li>
         </ul>
       ),
@@ -75,48 +67,37 @@ const LuxuryFAQ = () => {
       question: "Is it durable?",
       answer: (
         <>
-          Absolutely ✅ Our murals are engineered to last for{" "}
-          <strong>generations</strong>:
-          <ul className="list-disc pl-5 mt-2 space-y-1">
+          Absolutely ✅ UND murals are built to{" "}
+          <strong>last for generations</strong>:
+          <ul className="list-disc pl-6 mt-3 space-y-2">
             <li>100 years shelf life.</li>
             <li>20 years warranty against cracks or damage.</li>
+            <li>Moisture & dust resistant.</li>
             <li>
-              Moisture and dust-resistant for long-lasting beauty.
-            </li>
-            <li>
-              Made with <strong>fiber composite mixtures</strong> for strength and
-              stability.
+              Made with <strong>premium fiber composites</strong> for strength.
             </li>
           </ul>
-          <br />
-          Unlike MDF/POP murals that often crack or warp, UND murals are built to
-          endure.
         </>
       ),
     },
     {
-      question: "Why choose UND over cheaper/local options?",
+      question: "Why choose UND over cheaper options?",
       answer: (
-        <ul className="list-disc pl-5 space-y-1">
+        <ul className="list-disc pl-6 space-y-2">
           <li>
-            <strong>30+ years artistic expertise</strong> in every detail.
+            <strong>30+ years of artistic excellence</strong>.
           </li>
           <li>
             <strong>Premium materials</strong> – no MDF/POP compromises.
           </li>
           <li>
-            <strong>100+ skilled in-house artisans</strong> working full-time on UND
-            murals.
+            <strong>100+ in-house artisans</strong> working full-time.
           </li>
           <li>
-            <strong>Warranty + After-sales support</strong> – unmatched in the market.
+            <strong>After-sales support</strong> & unmatched warranty.
           </li>
           <li>
-            <strong>Safest delivery guarantee</strong> with hard protective packaging.
-          </li>
-          <li>
-            <strong>20 years warranty</strong> – no local competitor offers this
-            assurance.
+            <strong>Safest delivery guarantee</strong> in protective packaging.
           </li>
         </ul>
       ),
@@ -124,15 +105,33 @@ const LuxuryFAQ = () => {
   ];
 
   return (
-    <div className="my-8">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800">FAQs</h2>
-      <Accordion type="single" collapsible className="w-full">
+    <div className="my-16 max-w-4xl mx-auto px-4">
+      {/* Luxury Header */}
+      <div className="text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+          Frequently Asked Questions
+        </h2>
+        <p className="mt-3 text-gray-600 text-lg max-w-2xl mx-auto">
+          Everything you need to know about our premium luxury murals.
+        </p>
+      </div>
+
+      {/* Accordion */}
+      <Accordion
+        type="single"
+        collapsible
+        className="bg-white shadow-xl rounded-2xl border border-gray-100"
+      >
         {faqData.map((item, idx) => (
-          <AccordionItem key={idx} value={`item-${idx}`}>
-            <AccordionTrigger className="text-lg font-medium text-gray-700">
+          <AccordionItem
+            key={idx}
+            value={`item-${idx}`}
+            className="border-b last:border-b-0"
+          >
+            <AccordionTrigger className="text-lg font-semibold text-gray-800 px-6 py-4 hover:bg-gray-50 transition-all">
               {item.question}
             </AccordionTrigger>
-            <AccordionContent className="text-gray-600 leading-relaxed">
+            <AccordionContent className="px-6 pb-6 text-gray-700 leading-relaxed text-base">
               {item.answer}
             </AccordionContent>
           </AccordionItem>
