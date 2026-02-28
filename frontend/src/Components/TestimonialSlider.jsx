@@ -35,13 +35,6 @@ const testimonials = [
     image: buddha,
   },
   {
-    name: "Shreenath Ji Mukharbind",
-    client: "Devansh Mehta – Ahmedabad",
-    rating: 4,
-    review: "Exquisite craftsmanship. It brought a spiritual vibe to my home.",
-    image: shreenath,
-  },
-  {
     name: "Ram Darbar Mural",
     client: "Sunita Joshi – Mumbai",
     rating: 4,
